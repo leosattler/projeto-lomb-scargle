@@ -1,0 +1,18 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{INTRODUÇÃO}
+
+% Paragrafo original (Projeto Fourier)
+O fluxo solar na faixa de 10.7 cm (doravante chamado F10.7) é uma medida da intensidade da emissão do sol na faixa do rádio, mais precisamente em 10.7 cm (ou 2800 MHz). Este índice é um indicador da atividade magnética do Sol, fornecendo informações da atividade solar no ultravioleta e raio-X. Por isso, esse índice é muito relevante em ramos como astrofísica, meteoroglogia e geofísica. Com aplicações em modelagem climática, seu monitoramento é importante para a manutenção dos sistemas de comunicação via satélite \cite{huang2009forecast}. 
+
+Uma das ferramentas mais usadas para trabalhar com séries temporais deste tipo é a análise espectral, que objetiva representar um sinal como a combinação linear de funções periódicas. Para dados obtidos com um \textit{sampling rate} uniforme, i.e., sob a mesma taxa de registro durante toda a observação, o espectro de potência via FFT (do inglês, Fast Fourier Transform) é o método padrão utilizado. Porém, nem sempre o sinal disponível foi adquirido sob intervalo uniforme. Por exemplo,  o registro da variação do brilho de estrelas via telescópios terrestres está sujeito a diversas interrupções, umas de natureza periódica (rotação e translação terrestre) e outras de natureza não-periódica (mal tempo, problemas do equipamento, etc.). 
+
+O espectro de potência não é apropriado para dados não uniformes, e uma nova ferramenta se faz necessária para esses casos. O periodograma de Lomb-Scargle \cite{lomb1976least,scargle1982studies} é um algoritmo para detectar e caracterizar a periodicidade de séries temporais com sampling rates não uniformes. Ele utiliza o método de mínimos quadrados para ajustar funções senoidais aos dados \cite{2017arXiv170309824V}. 
+
+O presente trabalho é um follow-up de \citeonline{Leo}. Os dados F10.7 são manipulados com o fim de simular aquisição não uniforme. Experimentos são efetuados com a simulação de diferentes cenários de sampling rates não uniformes, com a geração do periodograma de Lomb-Scargle utilizando a biblioteca \texttt{astropy}. O presente manuscrito está assim organizado: na Seção 2 a metodologia empregada é introduzida; na Seção 3 os resultados são apresentados com uma breve discussão; na Seção 4 são oferecidas as considerações finais do autor.
+
+% Paragrafo original (Projeto Fourier)
+%Em conjunto com os dados de manchas solares, F10.7 é um dos indicadores mais usados para previsão da atividade solar. Por esse motivo, muitos estudos objetivando predição do clima espacial o utilizam como parâmetro de input. Por exemplo, \citeonline{mordvinov1986prediction} utilizou autorregressão multiplicativa para predição mensal dos valores de F10.7. \citeonline{dmitriev1999solar} aplicaram redes neurais para a predição. Por sua vez, \citeonline{zhong2005application} aplicou análise espectral para prever os valores de F10.7. Já \citeonline{bruevich2014study} aplicou análise Wavelet sobre as médias mensais desse dado para análise da série temporal.
+
+% Paragrafo original (Projeto Fourier)
+%A análise espectral é um método para representar um sinal como a combinação linear de funções periódicas. Ela faz parte de uma família de técnicas chamadas de Análise de Fourier. No presente trabalho, os dados do índice F10.7 são analisados no contexto da Análise de Fourier. Este manuscrito está assim organizado: na Seção 2 os dados e os tratamentos nele realizados são descritos; na Seção 3 é feita uma recapitulação da Análise de Fourier; na Seção 4 os resultados são apresentados com uma breve discussão; na Seção 5 são oferecidas as considerações finais do autor.
